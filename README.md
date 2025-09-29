@@ -69,7 +69,8 @@ Résultat :
 ## 🗺️ Schema  
 💡 High-level pipeline:  
 ```bash
-[Microphone] --> [ADC @ 8kHz] --> [FIR Filter] --> [Framing + Windowing] --> [MFCC Extraction] --> [Flattening] --> [Neural Network] --> [Prediction: Red 🔴 / Blue 🔵]
+[Microphone] --> [ADC @ 8kHz] --> [FIR Filter] --> [Framing + Windowing]  
+--> [MFCC Extraction] --> [Flattening] --> [Neural Network] --> [Prediction: Red 🔴 / Blue 🔵]
 ```
 
 ---
@@ -118,7 +119,5 @@ Open Serial Monitor at 9600 baud to see predictions.
 
 ## 📖 Inspiration / Sources
 It was a school project ECE I made in 2 mounths in Ing 3 !
-
-Add OLED visualization of predictions
 
 😆 100% coded and tested directly on Arduino hardware!
