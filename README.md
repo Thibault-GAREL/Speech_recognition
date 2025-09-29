@@ -1,6 +1,6 @@
 # 🎤 MFCC Voice Recognition on Arduino  
 
-![C](https://img.shields.io/badge/C-Embedded-blue.svg)
+![Cpp](https://img.shields.io/badge/Cpp-Embedded-blue.svg)
 ![Arduino](https://img.shields.io/badge/Arduino-Due-blue.svg)
 ![MFCC](https://img.shields.io/badge/MFCC-Feature--Extraction-red.svg)
 ![NeuralNetwork](https://img.shields.io/badge/NN-Classification-red.svg)  
@@ -69,9 +69,7 @@ Résultat :
 ## 🗺️ Schema  
 💡 High-level pipeline:  
 ```bash
-[Microphone] --> [ADC @ 8kHz] --> [FIR Filter] --> [Framing + Windowing]
---> [MFCC Extraction] --> [Flattening] --> [Neural Network]
---> [Prediction: Red 🔴 / Blue 🔵]
+[Microphone] --> [ADC @ 8kHz] --> [FIR Filter] --> [Framing + Windowing] --> [MFCC Extraction] --> [Flattening] --> [Neural Network] --> [Prediction: Red 🔴 / Blue 🔵]
 ```
 
 ---
@@ -88,12 +86,12 @@ Résultat :
 ├── Part_8_Extractor_weight/     # Extractor weight of the NN
 ├── Part_9_Final_raw_version/    # Raw version
 ├── Part_10_Final_version/       # Final version
-│ ├── 
-│ ├──
-│ ├──
-│ ├──
-│ ├──
-│ ├── 
+│ ├── NeuralNetwork.h            # NN Lib I used
+│ ├── arduinoMFCC.cpp            # MFCC lib I used
+│ ├── arduinoMFCC.h
+│ ├── cnn.cpp                    # Convolutional NN lib I used
+│ ├── cnn.h
+│ ├── main.cpp
 │
 ├── LICENSE
 └── README.md
@@ -105,36 +103,21 @@ Résultat :
 Clone the repository and open main.ino in Arduino IDE.
 
 Install dependencies:
-
-arduinoMFCC
-
-Adafruit_GFX
-
-Adafruit_SSD1306
+- arduinoMFCC
+- Adafruit_GFX
+- Adafruit_SSD1306
 
 Connect hardware:
+- Microphone to A0  
+- Push button to D7
+- (Optional) OLED display with I2C
 
-Microphone to A0
-
-Push button to D7
-
-(Optional) OLED display with I2C
-
-Upload to your Arduino board.
+Upload to your Arduino (DUE nano - ATMega328P) board.
 
 Open Serial Monitor at 9600 baud to see predictions.
 
-📖 Inspiration / Sources
-Developed as part of TP2 – MFCC coursework.
-Aimed at exploring embedded speech recognition with lightweight neural networks.
-
-Possible extensions:
-
-Normalize MFCC coefficients properly
-
-Improve FIR filtering efficiency
-
-Train on larger datasets for robustness
+## 📖 Inspiration / Sources
+It was a school project ECE I made in 2 mounths in Ing 3 !
 
 Add OLED visualization of predictions
 
