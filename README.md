@@ -121,3 +121,5 @@ Open Serial Monitor at 9600 baud to see predictions.
 It was a school project ECE I made in 2 mounths in Ing 3 !
 
 😆 100% coded and tested directly on Arduino hardware!
+
+Code created by me 😎, Thibault GAREL - [Github](https://github.com/Thibault-GAREL)
